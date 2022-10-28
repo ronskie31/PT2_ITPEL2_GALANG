@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Forbidden book </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-card>
+    <ion-card-header>
+        <ion-card-title>Secret Recipes</ion-card-title>
+        <ion-card-subtitle>By Justin Ron J. Galang</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+        Here are some famous foods with the top secret recipes.
+    </ion-card-content>
+</ion-card>
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let recipe of recipes" [routerLink]="['./', recipe.id]">
+            <ion-avatar slot="start">
+                <ion-img [src]="recipe.imageUrl"></ion-img>
+            </ion-avatar>
+            <ion-icon name="sparkles-sharp"></ion-icon>
+            <ion-label>{{recipe.title}}</ion-label>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
